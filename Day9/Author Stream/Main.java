@@ -15,19 +15,16 @@ public class Main {
 
         AuthorService authorService = new AuthorServiceImpl();
 
-        // Get unique surnames in uppercase
+        
         Set<String> uniqueSurnames = authorService.getUniqueSurnames(authors);
         System.out.println("Unique Surnames: " + uniqueSurnames);
 
-        // Get authors by city
         List<Author> authorsByCity = authorService.getAuthorsByCity(authors, "New Delhi");
         System.out.println("Authors in New Delhi: " + authorsByCity);
 
-        // Get average age of female authors
         double femaleAverageAge = authorService.femaleAverageAge(authors);
         System.out.println("Average Age of Female Authors: " + femaleAverageAge);
 
-        // Get mobile number by Aadhaar card
         Long mobileNumber = authorService.getMobileByAdhar(authors, 123456789012L);
         System.out.println("Mobile Number for Aadhaar 123456789012: " + mobileNumber);
     }
